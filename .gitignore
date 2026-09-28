@@ -1,0 +1,14 @@
+node_modules
+.env
+**/dist
+**/export
+**/npm
+results
+.nyc_output
+*.tsbuildinfo
+.idea
+.DS_Store
+*.diff
+/release
+/promo-dist
+test*.html

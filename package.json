@@ -1,0 +1,46 @@
+{
+  "name": "split-view-extension",
+  "version": "1.0.0",
+  "description": "A minimal Chrome extension for native Split View tab layouts.",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "packageManager": "npm@10.1.0",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "vite build --watch --mode development",
+    "bump": "node bumpVersion.js",
+    "build": "tsc && vite build",
+    "build:chrome": "npm run build",
+    "lint": "eslint .",
+    "typecheck": "tsc",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "lucide-react": "^1.48.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/chrome": "^0.1.43",
+    "@types/node": "^25.9.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@typescript-eslint/eslint-plugin": "^8.61.0",
+    "@typescript-eslint/parser": "^8.61.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "eslint": "^9",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.6",
+    "eslint-plugin-react": "^7.37.5",
+    "prettier": "^3.8.3",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.3.1",
+    "vite-plugin-zip-pack": "^1.2.4"
+  }
+}
