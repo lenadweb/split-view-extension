@@ -46,6 +46,10 @@ npm run promo:dev              # preview at http://localhost:5199/?asset=screens
 
 Store images and listing copy are in English. Set `CHROME_PATH` if Chrome is installed outside its usual location.
 
+## Releases
+
+Run `npm run bump` to increment the patch version in `package.json`, `package-lock.json`, and `public/manifest.json`. Commit the three files and push to `main`. CI checks the extension on pushes and pull requests. A manifest version change on `main` builds `release/build-chrome-<version>.zip` and creates a GitHub release tagged `v<version>`. The release workflow can also be started manually from GitHub Actions.
+
 ## Permissions
 
 | Permission     | Reason                                                    |
