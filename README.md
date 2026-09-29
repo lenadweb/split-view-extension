@@ -36,7 +36,7 @@ The popup is under `src/popup`: each panel has its own component, and tab update
 
 ## Chrome Web Store
 
-`store/description.md` contains the English listing. `store/permissions.md` contains the single-purpose and privacy answers. The generator renders the actual popup with sample tabs into `store/assets/`.
+`store/description.md` contains the English listing. `store/permissions.md` contains the single-purpose and privacy answers. `store/publishing.md` lists the Store dashboard fields and assets. The generator renders the actual popup with sample tabs into `store/assets/`.
 
 ```sh
 npm run promo                  # generate every image
