@@ -11,7 +11,6 @@
   },
   "scripts": {
     "dev": "vite build --watch --mode development",
-    "bump": "node bumpVersion.js",
     "build": "tsc && vite build",
     "build:chrome": "npm run build",
     "lint": "eslint .",
@@ -25,7 +24,6 @@
   },
   "devDependencies": {
     "@eslint/js": "^9",
-    "@tailwindcss/vite": "^4.3.3",
     "@types/chrome": "^0.1.43",
     "@types/node": "^25.9.2",
     "@types/react": "^19.2.17",
@@ -38,7 +36,6 @@
     "eslint-plugin-prettier": "^5.5.6",
     "eslint-plugin-react": "^7.37.5",
     "prettier": "^3.8.3",
-    "tailwindcss": "^4.3.0",
     "typescript": "^6.0.3",
     "vite": "^8.3.1",
     "vite-plugin-zip-pack": "^1.2.4"

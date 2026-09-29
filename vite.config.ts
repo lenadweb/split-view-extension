@@ -1,9 +1,10 @@
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import tailwindcss from '@tailwindcss/vite';
 import zipPack from 'vite-plugin-zip-pack';
-import { version } from './package.json';
+import pkg from './package.json' with { type: 'json' };
+
+const { version } = pkg;
 
 const rootDir = resolve(import.meta.dirname, 'src');
 const outDir = resolve(import.meta.dirname, 'dist');
@@ -18,7 +19,6 @@ export default defineConfig(({ mode }) => ({
     },
     plugins: [
         react(),
-        tailwindcss(),
         mode === 'production' &&
             zipPack({
                 inDir: outDir,
