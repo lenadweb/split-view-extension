@@ -1,6 +1,6 @@
 {
   "name": "split-view-extension",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A minimal Chrome extension for native Split View tab layouts.",
   "license": "MIT",
   "private": false,
