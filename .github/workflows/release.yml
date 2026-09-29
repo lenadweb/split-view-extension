@@ -1,0 +1,72 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - public/manifest.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Read version
+        id: version
+        run: |
+          VERSION=$(node -p "require('./public/manifest.json').version")
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          LOCK_VERSION=$(node -p "require('./package-lock.json').version")
+          ROOT_LOCK_VERSION=$(node -p "require('./package-lock.json').packages[''].version")
+          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ || "$VERSION" != "$PACKAGE_VERSION" || "$VERSION" != "$LOCK_VERSION" || "$VERSION" != "$ROOT_LOCK_VERSION" ]]; then
+            echo "::error::Version must match in public/manifest.json, package.json, and package-lock.json."
+            exit 1
+          fi
+          echo "value=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Check if release exists
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "v${{ steps.version.outputs.value }}" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install dependencies
+        if: steps.check.outputs.exists == 'false'
+        run: npm ci
+
+      - name: Check and build extension
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          npm run lint
+          npm run typecheck
+          npm run build
+
+      - name: Create GitHub release
+        if: steps.check.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION="${{ steps.version.outputs.value }}"
+          gh release create "v$VERSION" \
+            --title "v$VERSION" \
+            --generate-notes \
+            "release/build-chrome-$VERSION.zip"
