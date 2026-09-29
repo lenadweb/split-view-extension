@@ -1,0 +1,67 @@
+.candidate-list {
+    max-height: 196px;
+    overflow: auto;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--surface);
+    scrollbar-width: thin;
+    scrollbar-color: #b9b2d2 transparent;
+}
+
+.candidate {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 52px;
+    padding: 10px 14px;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    background: transparent;
+    text-align: left;
+}
+
+.candidate:last-child {
+    border-bottom: 0;
+}
+.candidate:hover {
+    background: var(--surface-hover);
+}
+.candidate[aria-pressed='true'] {
+    background: var(--primary-soft);
+}
+
+.candidate-copy {
+    flex: 1;
+    min-width: 0;
+}
+.candidate-copy strong {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.selection-mark {
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    flex: none;
+    border: 2px solid #aaa3bd;
+    border-radius: 50%;
+}
+.selection-mark.selected {
+    border-color: var(--primary);
+    background: var(--primary);
+    color: #ffffff;
+}
+.no-candidates {
+    padding: 22px 6px 4px;
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+}

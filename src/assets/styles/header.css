@@ -1,0 +1,35 @@
+.app-header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    height: 40px;
+    margin-bottom: 25px;
+}
+.app-header h1 {
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1;
+}
+
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 11px);
+    grid-template-rows: repeat(2, 11px);
+    gap: 3px;
+    width: 25px;
+    height: 25px;
+    flex: none;
+}
+
+.brand-grid span {
+    border-radius: 3px;
+    background: var(--primary);
+}
+.brand-grid span:nth-child(2),
+.brand-grid span:nth-child(3) {
+    background: #b7acfa;
+}
+.brand-grid span:nth-child(4) {
+    background: var(--ink);
+}

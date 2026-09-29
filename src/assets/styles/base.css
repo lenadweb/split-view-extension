@@ -1,0 +1,66 @@
+:root {
+    --page: #f5f4fa;
+    --surface: #ffffff;
+    --surface-soft: #eceaf3;
+    --surface-hover: #f0eef8;
+    --line: #ddd9e8;
+    --ink: #262237;
+    --muted: #716d7f;
+    --primary: #5b47e8;
+    --primary-hover: #4a35d5;
+    --primary-soft: #e8e4ff;
+    font-family: Roboto, system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--page);
+    color-scheme: light;
+    font-synthesis: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+body {
+    width: 380px;
+    margin: 0;
+}
+button,
+input {
+    font: inherit;
+}
+button {
+    cursor: pointer;
+}
+button:disabled {
+    cursor: default;
+    opacity: 0.55;
+}
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+h1,
+h2,
+p {
+    margin: 0;
+}
+
+.app-shell {
+    padding: 20px 20px 24px;
+    background: var(--page);
+}
+.section-label {
+    margin-bottom: 10px;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}
