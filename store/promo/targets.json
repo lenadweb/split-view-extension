@@ -1,0 +1,7 @@
+[
+  { "id": "screenshot-1", "file": "screenshot-1.png", "width": 1280, "height": 800 },
+  { "id": "screenshot-2", "file": "screenshot-2.png", "width": 1280, "height": 800 },
+  { "id": "screenshot-3", "file": "screenshot-3.png", "width": 1280, "height": 800 },
+  { "id": "marquee", "file": "marquee.png", "width": 1400, "height": 560 },
+  { "id": "small-tile", "file": "small-tile.png", "width": 440, "height": 280 }
+]

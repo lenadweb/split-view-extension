@@ -29,9 +29,22 @@ npm run dev        # rebuild dist when files change
 npm run typecheck
 npm run lint
 npm run build      # production build and ZIP
+npm run promo      # Chrome Web Store images in store/assets
 ```
 
 The popup is under `src/popup`: each panel has its own component, and tab updates live in `hooks/useWindowTabs.ts`. Split View operations are in `src/shared/split.ts`, with types and constants in separate files. The context menu is under `src/worker`. There are no backend services, accounts, analytics, or stored browsing data.
+
+## Chrome Web Store
+
+`store/description.md` contains the English listing. `store/permissions.md` contains the single-purpose and privacy answers. The generator renders the actual popup with sample tabs into `store/assets/`.
+
+```sh
+npm run promo                  # generate every image
+npm run promo screenshot-1     # generate one image
+npm run promo:dev              # preview at http://localhost:5199/?asset=screenshot-1
+```
+
+Store images and listing copy are in English. Set `CHROME_PATH` if Chrome is installed outside its usual location.
 
 ## Permissions
 

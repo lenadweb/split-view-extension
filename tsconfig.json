@@ -17,6 +17,6 @@
       "public/*": ["./public/*"]
     }
   },
-  "include": ["src/**/*", "vite.config.ts"],
+  "include": ["src/**/*", "store/promo/**/*", "vite.config.ts"],
   "exclude": ["node_modules", "dist"]
 }

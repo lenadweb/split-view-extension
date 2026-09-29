@@ -13,6 +13,8 @@
     "dev": "vite build --watch --mode development",
     "build": "tsc && vite build",
     "build:chrome": "npm run build",
+    "promo": "node store/promo/capture.js",
+    "promo:dev": "vite --config store/promo/vite.config.ts",
     "lint": "eslint .",
     "typecheck": "tsc",
     "format": "prettier --write ."
