@@ -1,9 +1,9 @@
 {
   "appName": {
-    "message": "Split View"
+    "message": "Split View: Two Tabs Side by Side"
   },
   "appDescription": {
-    "message": "Arrange Chrome tabs side by side with the native Split View API."
+    "message": "Put two Chrome tabs side by side with native Split View. Pair existing tabs, open links, and manage your tab pairs."
   },
   "actionTitle": {
     "message": "Manage Split View"
