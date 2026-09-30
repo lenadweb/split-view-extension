@@ -106,5 +106,8 @@
   },
   "showPair": {
     "message": "Show pair"
+  },
+  "viewOnGitHub": {
+    "message": "View on GitHub"
   }
 }

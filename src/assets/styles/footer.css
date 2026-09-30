@@ -1,0 +1,28 @@
+.app-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px;
+    border-radius: 4px;
+    color: var(--muted);
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 150ms;
+}
+.github-link svg {
+    width: 16px;
+    height: 16px;
+}
+.github-link:hover {
+    color: var(--ink);
+}
+.github-link:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}

@@ -11,6 +11,7 @@ import {
 } from '../shared/split';
 import { SplitErrorCode } from '../shared/types';
 import Header from './components/Header';
+import GitHubLink from './components/GitHubLink';
 import SplitComposer from './components/SplitComposer';
 import SplitPairs from './components/SplitPairs';
 import { useWindowTabs } from './hooks/useWindowTabs';
@@ -122,6 +123,7 @@ export default function App() {
                     />
                 </>
             )}
+            <GitHubLink />
         </main>
     );
 }
